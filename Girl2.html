@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mon espace — Liens</title>
+  <meta name="description" content="Tous mes réseaux en un seul endroit" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#ff69b4;--card:rgba(255,255,255,0.65);--muted:#7a597f;--highlight:#ff85c1;}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,sans-serif;position:relative;overflow-x:hidden;}
+    body{background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fbc2eb, #f6d365);background-size: 1200% 1200%;animation: rainbowBG 25s ease infinite;}
+    @keyframes rainbowBG {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+    .wrap{min-height:100%;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:24px;padding:28px;position:relative;}
+    .card, .comment-card{background:var(--card);backdrop-filter:blur(15px);border-radius:32px;padding:28px;border:2px solid rgba(255,255,255,0.6);box-shadow:0 12px 50px rgba(255,105,180,0.4);position:relative;transition:0.5s;}
+    .card:hover, .comment-card:hover{transform:scale(1.03);}
+    .card{max-width:520px;flex:1;position:relative;}
+    .comment-card{max-width:400px;flex:1;display:flex;flex-direction:column;gap:14px;}
+    .top{display:flex;gap:14px;align-items:center;justify-content:center;flex-direction:column;text-align:center;position:relative;}
+    .avatar{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff6f9, var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:36px;box-shadow:0 0 30px rgba(255,105,180,0.7);animation: pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+    h1{margin:14px 0 6px;font-size:28px;color:#b0377f;text-shadow:1px 1px 6px rgba(255,255,255,0.9);font-family:'Great Vibes', cursive;}
+    .info p{margin:0;color:var(--muted);font-size:16px;}
+    .bio{margin:20px 0 12px;color:#81466d;font-size:16px;text-align:center;}
+    .collab-msg{margin:14px 0;padding:14px;background:linear-gradient(45deg,#ff9a9e,#fad0c4,#a1c4fd);border-radius:20px;color:white;text-align:center;font-weight:700;font-family:'Dancing Script', cursive; font-size:18px;box-shadow:0 6px 20px rgba(255,105,180,0.5);}
+    .links{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+    .btn{display:block;text-decoration:none;padding:14px 18px;border-radius:24px;background:var(--accent);color:white;font-weight:700;text-align:center;box-shadow:0 6px 20px rgba(255,105,180,0.4);transition:all .3s; cursor:pointer; font-size:16px;}
+    .btn:hover{transform:translateY(-3px) scale(1.03); background:var(--highlight);}
+    .dropdown{position:relative; margin-top:14px;}
+    .dropdown-btn{padding:14px 22px;background:linear-gradient(45deg,#ff9a9e,#fad0c4,#a1c4fd);color:white;font-weight:700;border:none;border-radius:28px;cursor:pointer;box-shadow:0 6px 20px rgba(255,105,180,0.5);transition:0.3s; font-family:'Dancing Script', cursive; font-size:16px;}
+    .dropdown-btn:hover{transform:scale(1.08);}
+    .dropdown-content{display:none;position:absolute;bottom:50px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-radius:18px;padding:12px;box-shadow:0 10px 25px rgba(0,0,0,0.25);flex-direction:column;gap:10px;}
+    .dropdown-content a{padding:12px 16px;border-radius:14px;background:linear-gradient(45deg,#ff9a9e,#fad0c4,#a1c4fd);color:white;text-decoration:none;text-align:center;transition:0.3s;font-weight:700;}
+    .dropdown-content a:hover{background:linear-gradient(45deg,#ff85c1,#fbc2eb,#a1c4fd);}
+    .comment-card h2{margin:0 0 12px 0;color:#b0377f;text-align:center;font-family:'Dancing Script', cursive; font-size:20px;}
+    .comment-card input, .comment-card textarea{width:100%;padding:10px;border-radius:14px;border:1px solid #ffb6c1;margin-bottom:8px;font-family:'Poppins';font-size:14px;}
+    .comment-card button{padding:12px 16px;background:#ff69b4;color:white;border:none;border-radius:20px;font-weight:700;cursor:pointer;transition:0.3s;font-size:15px;}
+    .comment-card button:hover{background:#ff85c1;transform:scale(1.05);}
+    .comment-item{padding:8px 12px;margin-bottom:8px;background:rgba(255,192,203,0.45);border-radius:14px;box-shadow:0 2px 10px rgba(255,105,180,0.3);}
+    .thumbs{display:flex;gap:14px;margin-bottom:8px;cursor:pointer;justify-content:center;}
+    .thumb{padding:8px 12px;border-radius:14px;background:rgba(255,105,180,0.35);transition:0.3s;}
+    .thumb:hover{background:var(--highlight); transform:scale(1.1);}
+    .follow-section{position:absolute;top:10px;left:10px;background:rgba(255,255,255,0.65);padding:10px 16px;border-radius:24px;box-shadow:0 6px 16px rgba(0,0,0,0.3);text-align:center;z-index:5;}
+    .follow-btn{padding:10px 16px;background:#ff69b4;color:white;border:none;border-radius:24px;font-weight:700;cursor:pointer;transition:0.3s;font-size:14px;}
+    .follow-btn:hover{background:#ff85c1;transform:scale(1.05);}
+    footer{text-align:center;color:#81466d;font-size:12px;margin-top:18px;}
+    .decor-img{position:absolute;width:110px;height:110px;object-fit:cover;transition: transform 0.5s, box-shadow 0.5s; cursor:pointer;}
+    .decor-img:hover{transform:scale(1.05) rotate(5deg); box-shadow:0 12px 30px rgba(255,105,180,0.5);}
+    .frame-circle{border-radius:50%;border:4px solid #ff69b4; box-shadow:0 12px 25px rgba(255,105,180,0.5);}
+    .frame-star{clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);border:4px solid #f6d365;box-shadow:0 12px 25px rgba(246,211,101,0.5);}
+    .frame-square{border-radius:18px;border:4px solid #a1c4fd;box-shadow:0 12px 25px rgba(161,196,253,0.5);}
+    .frame-rounded{border-radius:28%;border:4px solid #fbc2eb;box-shadow:0 12px 25px rgba(251,194,235,0.5);}
+  </style>
+</head>
+<body>
+  <img src="sep.jpg" class="decor-img frame-circle" style="top:5%; left:5%;">
+  <img src="se.jpg" class="decor-img frame-star" style="top:5%; right:5%;">
+  <img src="sep.jpg" class="decor-img frame-rounded" style="bottom:5%; left:5%;">
+  <img src="se.jpg" class="decor-img frame-square" style="bottom:5%; right:5%;">
+
+  <div class="wrap">
+    <main class="card">
+      <div class="follow-section">
+        <button class="follow-btn" id="followBtn">Follow</button>
+        <p>Abonnés: <span id="followCount">0</span></p>
+      </div>
+      <div class="top">
+        <div class="avatar">👑</div>
+        <h1>La Fille Qui Dors Dans Live</h1>
+        <div class="info"><p>Créatrice • Informaticienne • Cybersécurité 🛡️💻</p></div>
+      </div>
+      <p class="bio">Bienvenue dans mon univers de princesse ✨ Retrouve mes réseaux et projets ici 💖</p>
+
+      <div class="links">
+        <a class="btn" href="mailto:kilanyossisephora450@gmail.com">💌 Mail</a>
+        <a class="btn" href="https://wa.me/22991313585" target="_blank">💼 WhatsApp Collaboration</a>
+        <a class="btn" href="https://wa.me/22964173604" target="_blank">💬 WhatsApp Amis/Fans</a>
+        <a class="btn" href="https://www.instagram.com/sepho_kls" target="_blank">📸 Instagram</a>
+        <a class="btn" href="https://www.tiktok.com/@sephokls" target="_blank">🎵 TikTok</a>
+        <a class="btn" href="https://www.youtube.com/@Sepho_Kls" target="_blank">▶️ YouTube</a>
+      </div>
+
+      <div class="collab-msg">Pour toute collaboration, écrivez-moi par mail ou WhatsApp 💌📱<br>Et abonnez-vous à ma page ! 👑</div>
+
+      <div class="dropdown">
+        <button class="dropdown-btn" id="shareBtn">✨ Partager / Télécharger ✨</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="#" id="copyLinkBtn">Copier le lien</a>
+          <a href="#" id="downloadVcf">Télécharger vCard</a>
+        </div>
+      </div>
+    </main>
+
+    <main class="comment-card">
+      <h2>Commentaires et avis</h2>
+      <input type="text" id="nameInput" placeholder="Votre nom (optionnel)">
+      <textarea id="commentInput" placeholder="Votre commentaire"></textarea>
+      <input type="number" id="ratingInput" min="0" max="100" placeholder="Note %">
+      <div class="thumbs">
+        <span class="thumb" id="thumbUp">👍 <span id="thumbUpCount">0</span></span>
+        <span class="thumb" id="thumbDown">👎 <span id="thumbDownCount">0</span></span>
+      </div>
+      <button id="submitComment">Poster</button>
+      <p>Note moyenne: <span id="avgRating">0</span>% (<span id="totalVotes">0</span> votes)</p>
+      <div id="commentList"></div>
+    </main>
+  </div>
+
+  <footer>© <span id="year"></span> Princesse Séphora</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const shareBtn=document.getElementById('shareBtn');
+    const dropdown=document.getElementById('dropdownContent');
+    shareBtn.addEventListener('click',()=>{dropdown.style.display=dropdown.style.display==='flex'?'none':'flex';dropdown.style.flexDirection='column';});
+    document.getElementById('copyLinkBtn').addEventListener('click',async e=>{e.preventDefault();await navigator.clipboard.writeText(location.href); alert('Lien copié ! ✨');});
+    document.getElementById('downloadVcf').addEventListener('click',()=>{const vcard=`BEGIN:VCARD\nVERSION:3.0\nFN:Princesse Séphora\nEMAIL:kilanyossisephora450@gmail.com\nTEL:whatsapp:+22991313585\nNOTE:Créatrice féérique\nEND:VCARD`;const blob=new Blob([vcard],{type:'text/vcard'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='princesse_sephora.vcf';a.click();URL.revokeObjectURL(url);});
+    let followCount=0;const followBtn=document.getElementById('followBtn');followBtn.addEventListener('click',()=>{followCount++;document.getElementById('followCount').textContent=followCount;followBtn.disabled=true;followBtn.textContent='Abonné';});
+    let comments=[];
+    function updateComments(){const list=document.getElementById('commentList');list.innerHTML='';let totalRating=0;comments.forEach(c=>{totalRating+=c.rating;const div=document.createElement('div');div.className='comment-item';div.innerHTML=`<strong>${c.name||'Anonyme'}:</strong> ${c.text} <em>(${c.rating}%)</em>`;list.appendChild(div);});document.getElementById('totalVotes').textContent=comments.length;document.getElementById('avgRating').textContent=comments.length?Math.round(totalRating/comments.length):0;}
+    document.getElementById('submitComment').addEventListener('click',()=>{const name=document.getElementById('nameInput').value;const text=document.getElementById('commentInput').value;const rating=parseInt(document.getElementById('ratingInput').value)||0;if(text){comments.push({name,text,rating});document.getElementById('nameInput').value='';document.getElementById('commentInput').value='';document.getElementById('ratingInput').value='';updateComments();}else alert('Veuillez écrire un commentaire !');});
+    let voted=sessionStorage.getItem('voted')||'false';let upCount=0,downCount=0;
+    document.getElementById('thumbUp').addEventListener('click',()=>{if(voted==='false'){upCount++;document.getElementById('thumbUpCount').textContent=upCount;voted='true';sessionStorage.setItem('voted','true');}});
+    document.getElementById('thumbDown').addEventListener('click',()=>{if(voted==='false'){downCount++;document.getElementById('thumbDownCount').textContent=downCount;voted='true';sessionStorage.setItem('voted','true');}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Site Ministère</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BARRE DE MENU GLOBALE */
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0; /* Bande grise du haut */
+        }
+
+        /* MENU "PRÉSENTATION" EN VERT */
+        .menu-gauche {
+            background-color: #198d19;
+        }
+
+        .menu-gauche ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        .menu-gauche li {
+            position: relative;
+        }
+
+        .menu-gauche a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu-gauche li:hover {
+            background-color: #127812;
+        }
+
+        /* SOUS-MENU LÉGISLATION */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #198d19;
+            flex-direction: column;
+            min-width: 180px;
+            z-index: 10;
+        }
+
+        .submenu li a {
+            font-weight: normal;
+            padding: 10px 15px;
+        }
+
+        .dropdown:hover .submenu {
+            display: flex;
+        }
+
+        /* MENU DE DROITE (gris clair) */
+        .menu-droit {
+            display: flex;
+            background-color: #f0f0f0;
+            flex-grow: 1;
+        }
+
+        .menu-droit a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu-droit li {
+            list-style: none;
+        }
+
+        .menu-droit a:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* SECTION IMAGE / CONTENU EN DESSOUS */
+        .contenu {
+            width: 100%;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .contenu img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <!-- Partie gauche en vert -->
+        <div class="menu-gauche">
+            <ul>
+                <li><a href="#">PRÉSENTATION</a></li>
+                <li class="dropdown">
+                    <a href="#">LÉGISLATION ▼</a>
+                    <ul class="submenu">
+                        <li><a href="#">Lois</a></li>
+                        <li><a href="#">Décrets</a></li>
+                        <li><a href="#">Arrêtés</a></li>
+                        <li><a href="#">Ordonnances</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Partie droite grise -->
+        <ul class="menu-droit">
+            <li><a href="#">PUBLICATIONS</a></li>
+            <li><a href="#">ACTUALITÉS</a></li>
+            <li><a href="#">LIENS UTILES ▼</a></li>
+            <li><a href="#">JURISPRUDENCE</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECTION IMAGE (tu mettras ta photo ici) -->
+    <div class="contenu">
+        <img src="ma-photo.jpg" alt="Image de la page">
+    </div>
+
+</body>
+</html>

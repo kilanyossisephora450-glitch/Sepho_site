@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mes Liens • Ton Nom</title>
+  <meta name="description" content="Page de liens simple et élégante pour partager tous tes réseaux." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* arrière-plan */
+      --card:#0b1220; /* carte */
+      --accent:#ff6b81; /* couleur principale (change !) */
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg),#070915);display:grid;place-items:center}
+    .container{width:100%;max-width:520px;padding:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:28px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+
+    .top{display:flex;gap:16px;align-items:center}
+    .avatar{width:92px;height:92px;border-radius:28px;flex:0 0 92px;overflow:hidden;border:2px solid rgba(255,255,255,0.04);background:linear-gradient(135deg,var(--accent),#6b5bff);display:grid;place-items:center;color:white;font-weight:700;font-size:28px}
+    .profile{flex:1}
+    h1{margin:0;font-size:20px}
+    p.bio{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .links{margin-top:18px;display:grid;gap:12px}
+    .link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--card);text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,0.02);transition:transform .12s ease, box-shadow .12s ease}
+    .link:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(3,6,23,0.6)}
+    .link .icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--glass);flex:0 0 36px}
+    .link .title{font-weight:600}
+    .link .subtitle{font-size:12px;color:var(--muted)}
+    .small{font-size:12px;color:var(--muted);margin-top:14px;text-align:center}
+
+    .actions{display:flex;gap:8px;margin-top:16px}
+    .btn{padding:10px 12px;border-radius:10px;border:0;background:transparent;color:var(--muted);cursor:pointer;font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#6b5bff);color:white}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+
+    /* responsive */
+    @media (max-width:420px){.avatar{width:76px;height:76px;border-radius:18px}.card{padding:18px}}
+
+    /* theme helper (light support) */
+    .light{--bg:#f7fafc;--card:#ffffff;--accent:#ff6b81;--muted:#51585f;color-scheme:light}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="pageCard">
+      <div class="top">
+        <div class="avatar" id="avatar">A</div>
+        <div class="profile">
+          <h1 id="displayName">Ton Prénom</h1>
+          <p class="bio" id="bio">Créatrice • Amoureuse de la mode • Contenu fun & positif</p>
+        </div>
+      </div>
+
+      <div class="links" id="links">
+        <!-- Remplace les href ci-dessous par tes vrais liens -->
+        <a class="link" href="https://instagram.com/tonprofil" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden>
+            <!-- SVG Instagram -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 2H17C20 2 22 4 22 7V17C22 20 20 22 17 22H7C4 22 2 20 2 17V7C2 4 4 2 7 2Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="title">Instagram</div>
+            <div class="subtitle">@tonprofil</div>
+          </div>
+        </a>
+
+        <a class="link" href="https://tiktok.com/@tonprofil" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden>
+            <!-- SVG TikTok simple -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 8V16C9 19 11 21 14 21C17 21 19 19 19 16V6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="title">TikTok</div>
+            <div class="subtitle">@tonprofil</div>
+          </div>
+        </a>
+
+        <a class="link" href="https://youtube.com/c/tonchaine" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 7.2C22 7.2 22 5.7 20.9 4.9C19.6 4 12 4 12 4C12 4 4.4 4 3.1 4.9C2 5.7 2 7.2 2 7.2C2 7.2 2 9 2 10.8V13.2C2 15 2 16.8 2 16.8C2 16.8 2 18.3 3.1 19.1C4.4 20 12 20 12 20C12 20 19.6 20 20.9 19.1C22 18.3 22 16.8 22 16.8C22 16.8 22 15 22 13.2V10.8C22 9 22 7.2 22 7.2Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 9L15 12L10 15V9Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="title">YouTube</div>
+            <div class="subtitle">Chaine</div>
+          </div>
+        </a>
+
+        <a class="link" href="mailto:tonmail@example.com" target="_blank" rel="noopener noreferrer">
+          <div class="icon" aria-hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7.2L12 13.2L21 7.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 17H3V7.2V17Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="title">Contact</div>
+            <div class="subtitle">tonmail@example.com</div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="editBtn">Personnaliser</button>
+        <button class="btn primary" id="copyBtn">Copier le lien</button>
+      </div>
+
+      <div class="small">Astuce : remplace les liens dans le code par tes vrais liens avant de publier.</div>
+      <footer>© <span id="year"></span> Ton Nom</footer>
+    </div>
+  </div>
+
+  <script>
+    // petits helpers pour personnalisation rapide
+    const displayName = document.getElementById('displayName');
+    const bio = document.getElementById('bio');
+    const avatar = document.getElementById('avatar');
+    const year = document.getElementById('year');
+    const copyBtn = document.getElementById('copyBtn');
+    const editBtn = document.getElementById('editBtn');
+    year.textContent = new Date().getFullYear();
+
+    // exemple: données par défaut (pour que tu puisses changer sans toucher trop au code)
+    const config = {
+      name: 'Ton Prénom',
+      bio: 'Créatrice • Amoureuse de la mode • Contenu fun & positif',
+      avatarText: 'A'
+    };
+    displayName.textContent = config.name;
+    bio.textContent = config.bio;
+    avatar.textContent = config.avatarText;
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = 'Lien copié !';
+        setTimeout(()=> copyBtn.textContent = 'Copier le lien',1500);
+      } catch (e) {
+        copyBtn.textContent = 'Impossible';
+        setTimeout(()=> copyBtn.textContent = 'Copier le lien',1500);
+      }
+    });
+
+    editBtn.addEventListener('click', ()=>{
+      const newName = prompt('Nouveau nom affiché :', displayName.textContent);
+      if(newName!==null) displayName.textContent = newName;
+      const newBio = prompt('Nouvelle bio :', bio.textContent);
+      if(newBio!==null) bio.textContent = newBio;
+    });
+  </script>
+</body>
+</html>
